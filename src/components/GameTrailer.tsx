@@ -6,13 +6,13 @@ interface Props {
 }
 
 const GameTrailer = ({ gameId }: Props) => {
-  const { data: game, error, isLoading } = useTrailer(gameId);
+  const { data: trailer, error, isLoading } = useTrailer(gameId);
 
   if (isLoading) return <Spinner />;
 
-  if (error || !game) throw error;
+  if (error || !trailer) throw error;
 
-  const first = game?.results[0];
+  const first = trailer?.results[0];
 
   return first ? <video src={`${first.data[480]}`} controls poster={`${first.preview}`} /> : null;
 };
