@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import ms from "ms";
-import { Screenshots } from "../entities/Screenshots";
+import Screenshots from "../entities/Screenshots";
 import APIClient from "../services/api-client";
 
 const useScreenshots = (slug: number) => {
